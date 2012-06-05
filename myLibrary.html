@@ -4,6 +4,7 @@
   <title>My Library</title>
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  
   <script type="text/javascript">
    $(document).ready(function(){
     var count=1;
@@ -18,6 +19,7 @@
     });
    });
   </script>
+  
   <script type="text/javascript">
    function delrow(rownum){
     var index=0;
@@ -40,18 +42,20 @@
      width:80%;
      font-family:Helvetica, Arial, sans-serif;}
    table
-    {width:100%}
+    {width:100%;}
    th,td
     {outline-style:solid;
      outline-width:2px;
      padding:5px 10px;}
+   tr:nth-child(odd), tr:nth-child(odd) *
+    {background-color:#ddf;}
    td.add
-    {padding:0px 0px 0px 6px}
+    {padding:0px 0px 0px 6px;}
    td:last-child
     {padding:0px;
      text-align:center;}
-   th 
-    {background-color:#ddddff}
+   td:last-child:hover, td:last-child:hover *, #header th
+    {background-color:#cfa;}
    input
     {font-family:Helvetica, Arial, sans-serif;
      font-size:1em;
@@ -65,8 +69,9 @@
  
  <body>
   <h1>Library</h1>
+  
   <table id="cat">
-   <tr><th>Author</th><th>Title</th><th>Year</th><th>-</th></tr>  
+   <tr id="header"><th>Author</th><th>Title</th><th>Year</th><th>-</th></tr>  
    <tr class="add"><form>
     <td class="add"><input type="text" value="Author" id="author" size=25% /></td>
     <td class="add"><input type="text" value="Title" id="title" size=45% /></td>
